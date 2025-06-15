@@ -15,6 +15,10 @@
     padding: 0;
 }
 
+input {
+    outline: none;
+}
+
 input,
 button,
 label {
@@ -48,6 +52,7 @@ a {
 body {
     height: 100vh;
     display: flex;
+    flex-wrap: wrap;
 }
 
 div.left-section {
@@ -87,6 +92,22 @@ div.right-section {
     background-color: rgba(2, 2, 2, 0.5);
 }
 
+.left-section div.background-credits {
+    font-size: 0.8rem;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: lighter;
+    position: absolute;
+    bottom: 0;
+    z-index: 100;
+    color: rgb(255, 255, 255, 0.6);
+}
+
+.left-section div.background-credits a {
+    text-decoration: underline;
+}
+
 .right-section {
     background-color: rgb(200, 200, 200);
     flex: 3;
@@ -106,12 +127,89 @@ div.right-section {
 div.middle-section {
     margin-top: 40px;
     width: 100%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    padding: 0 100px;
+    background-color: white;
+}
+
+div.form-container {
+    padding: 50px 0;
+}
+
+div.middle-section div.title {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 form {
-    
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-    padding: 2rem;
-    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
+form>div[class] {
+    display: flex;
+    gap: 15vw;
+}
+
+form>div[class]>div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+form>div[class]>div>label {
+    font-size: 0.85rem;
+    color: gray;
+    font-weight: bold;
+}
+
+form>div[class]>div>input {
+    padding: 5px;
+    height: 1.5rem;
+    width: 15vw;
+    border: 1px #E5E7EB solid;
+    border-radius: 5px;
+}
+
+form>div[class]>div>input:not(#password):not(#confirm-password):not(#email):focus {
+    border: 1px solid blue;
+    outline: none;
+}
+
+input:is([type="password"], [type = "email"]):invalid {
+    border: 1px solid red;
+}
+
+input[type="password"]:focus {
+    outline: none;
+}
+
+input[type="password"]:valid {
+    border: 1px solid #596D48;
+}
+
+div.right-section div.lower-section {
+    width: 100%;
+    margin-top: 40px;
+    padding: 0 100px;
+}
+
+div.right-section div.lower-section button {
+    padding: 0.5rem 2.5rem;
+    border: none;
+    background-color: #596D48;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.15);
+    margin-bottom: 35px;
+}
+
+div.right-section div.lower-section button:hover {
+    cursor: pointer;
+}
+
+div.right-section div.lower-section div a {
+    color: #596D48;
 }
