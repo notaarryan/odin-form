@@ -178,15 +178,15 @@ form>div[class]>div>input:not(#password):not(#confirm-password):not(#email):focu
     outline: none;
 }
 
-input:is([type="password"], [type = "email"]):invalid {
+input:is([type="password"], [type="email"]):invalid {
     border: 1px solid red;
 }
 
-input[type="password"]:focus {
+input:is([type="password"], [type="email"]):focus {
     outline: none;
 }
 
-input[type="password"]:valid {
+input:is([type="password"], [type="email"]):valid {
     border: 1px solid #596D48;
 }
 
